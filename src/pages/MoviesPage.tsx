@@ -1,24 +1,4 @@
-// import SideBar from '../components/SideBar'
-// import MovieCard from '../components/MovieCards'
-// import data from '../Data/data.json'
-// import SearchInput from '../components/SearchInput'
 
-// export default function MoviesPage() {
-//   const movies = data.filter((d) => d.category === 'Movie')
-
-//   return (
-//     <div className="flex bg-[#10141e] min-h-screen">
-//       <SideBar />
-//       <main className="flex-1 p-6 text-white">
-//         <SearchInput />
-//         <h1 className="text-2xl font-semibold mb-6">Movies</h1>
-//         <MovieCard items={movies} showTrending={false} />
-//       </main>
-//     </div>
-//   )
-// }
-
-// ...existing code...
 import SideBar from '../components/SideBar'
 import MovieCard from '../components/MovieCards'
 import data from '../Data/data.json'
@@ -61,4 +41,3 @@ export default function MoviesPage() {
     </div>
   )
 }
-// ...existing code...

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import { useNavigate, Link } from "react-router";
-import { Film } from "lucide-react";
+
 
 export default function Login() {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col items-center justify-center p-4">
       <div className="mb-12">
-        <Film className="w-12 h-12 text-red-500" strokeWidth={2.5} />
+        <img src="/logo.svg" alt="App Logo" className="w-12 h-12 mt-4 mx-auto" />
       </div>
 
       <div className="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 w-full max-w-md shadow-2xl border border-slate-700/50">
