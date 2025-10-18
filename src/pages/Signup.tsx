@@ -3,7 +3,7 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import { useNavigate, Link } from "react-router";
-import { Film } from "lucide-react";
+
 
 export default function Signup() {
   const navigate = useNavigate();
