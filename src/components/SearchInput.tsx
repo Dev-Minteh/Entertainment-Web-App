@@ -4,11 +4,11 @@ export default function SearchInput() {
   const { query, setQuery } = useSearch();
 
   return (
-    <div className="relative w-full mb-6">
+    <div className="relative w-full mb-6 z-50 md:z-0">
       <img
         src="/icon-search.svg"
         alt="search icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none"
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none "
       />
       <input
         type="text"

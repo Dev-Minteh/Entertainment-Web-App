@@ -1,43 +1,13 @@
-// import MovieCard from '../components/MovieCards'
-// import SearchInput from '../components/SearchInput'
-// import SideBar from '../components/SideBar'
-// import data from '../Data/data.json'
-// export default function Homepage() {
-//     const trending = data.filter((d) => d.isTrending)
-//   const recommended = data.filter((d) => !d.isTrending)
-
-//   return (
-//     <div className="flex bg-[#10141e] min-h-screen">
-//       <SideBar />
-//         <main className="flex-1 p-6 text-white">
-//             <SearchInput />
-//             <section className="mb-4">
-//                 <h2 className="text-2xl font-semibold mb-4">Trending</h2>
-//                 <div className="">
-//                     <MovieCard items={trending} />
-//                 </div>
-//             </section>
-//             <section>
-//                 <h2 className="text-2xl font-semibold mb-4">recommended for you</h2>
-//                 <div className="">
-//                     <MovieCard items={recommended} />
-//                 </div>
-//             </section>
-//         </main>  
-//     </div>
-//   )
-// }
-
-// ...existing code...
-import SideBar from "../components/SideBar";
-import SearchInput from "../components/SearchInput";
-import MovieCard from "../components/MovieCards";
-import data from "../Data/data.json";
+import MovieCard from '../components/MovieCards'
+import SearchInput from '../components/SearchInput'
+import SideBar from '../components/SideBar'
+import data from '../Data/data.json'
 import { useSearch } from "../components/context/SearchContext";
-
 export default function Homepage() {
-  const { query } = useSearch();
-  const q = query.trim().toLowerCase();
+
+
+const { query } = useSearch();
+ const q = query.trim().toLowerCase();
 
   if (q) {
     const filtered = data.filter((d) =>
@@ -60,26 +30,28 @@ export default function Homepage() {
     );
   }
 
-  // no query -> normal homepage layout with trending + recommended
-  const trending = data.filter((d) => d.isTrending);
-  const recommended = data.filter((d) => !d.isTrending);
+  const trending = data.filter((d) => d.isTrending)
+  const recommended = data.filter((d) => !d.isTrending)
 
   return (
-    <div className="flex bg-[#10141e] min-h-screen">
+  <div className="flex flex-col md:flex-row bg-[#10141e] min-h-screen">
+    <div className="">
       <SideBar />
-      <main className="flex-1 p-6 text-white">
-        <SearchInput />
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">Trending</h2>
-          <MovieCard items={trending} />
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Recommended for you</h2>
-          <MovieCard items={recommended} />
-        </section>
-      </main>
     </div>
-  );
+    <main className="flex-1  min-h-screen p-4 sm:p-6 text-white pt-20 lg:pt-6 md:pt-6">
+      <SearchInput />
+
+      <section className="mb-6">
+        <h2 className="text-lg sm:text-2xl font-semibold mb-4">Trending</h2>
+        <MovieCard items={trending} />
+      </section>
+
+      <section>
+        <h2 className="text-lg sm:text-2xl font-semibold mb-4">Recommended for you</h2>
+        <MovieCard items={recommended} />
+      </section>
+    </main>
+  </div>
+)
+
 }
-// ...existing code...

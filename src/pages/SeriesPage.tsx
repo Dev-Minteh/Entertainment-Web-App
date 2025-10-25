@@ -39,7 +39,7 @@ export default function TVSeriesPage() {
   return (
     <div className="flex bg-[#10141e] min-h-screen">
       <SideBar />
-      <main className="flex-1 p-6 text-white">
+      <main className="flex-1 p-6 sm:p-6  min-h-screen text-white pt-20 lg:pt-6 md:pt-6">
         <SearchInput />
 
         {q ? (
